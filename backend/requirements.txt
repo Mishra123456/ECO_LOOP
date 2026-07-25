@@ -1,0 +1,38 @@
+# Eco-Loop Backend Dependencies
+# Honeywell Hackathon 2026
+
+# ── Web Framework ────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.8.2
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# ── Async ────────────────────────────────────────
+aiofiles==23.2.1
+aiohttp==3.10.5
+httpx==0.27.2
+
+# ── Database ─────────────────────────────────────
+aiosqlite==0.20.0
+
+# ── Numerics / Optimization ──────────────────────
+numpy==2.0.1
+scipy==1.14.0
+
+# ── LLM / AI ─────────────────────────────────────
+# Groq SDK (free API)
+groq==0.11.0
+# Ollama Python client (local LLM)
+ollama==0.3.3
+
+# ── EnergyPlus (optional) ────────────────────────
+# pyenergyplus is bundled with EnergyPlus 23.2+ installation
+# No pip install needed — just set ENERGYPLUS_PATH in .env
+
+# ── Logging / Utils ──────────────────────────────
+rich==13.8.0
+python-json-logger==2.0.7
+
+# ── CORS / Security ──────────────────────────────
+# Included in fastapi — no extra package needed
