@@ -1,20 +1,22 @@
 @echo off
 echo ========================================================
-echo Pushing Eco-Loop Codebase & Deliverables to GitHub...
+echo Pushing Eco-Loop Codebase Updates to GitHub (Safe Push)
 echo Target Repo: https://github.com/Mishra123456/ECO_LOOP.git
 echo ========================================================
 
-if exist .git (
-    rmdir /s /q .git
+if not exist .git (
+    git init
+    git remote add origin https://github.com/Mishra123456/ECO_LOOP.git
 )
 
-git init
-git remote add origin https://github.com/Mishra123456/ECO_LOOP.git
-git add .
-git commit -m "Honeywell Hackathon 2026 Submission - Eco-Loop Autonomous AI Building Intelligence Platform"
+git fetch origin
 git branch -M main
-git push -u origin main --force
+git pull origin main --allow-unrelated-histories -X ours --no-edit
+
+git add .
+git commit -m "Update Eco-Loop codebase and README"
+git push -u origin main
 
 echo.
-echo SUCCESS! Your codebase and all deliverables are live on GitHub!
+echo SUCCESS! New content and README pushed to GitHub safely!
 pause
